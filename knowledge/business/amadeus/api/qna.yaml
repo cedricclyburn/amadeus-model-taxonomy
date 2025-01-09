@@ -1,0 +1,72 @@
+task_description: 'Provide comprehensive information about the Amadeus Developer API and its key functionalities.'
+created_by: amadeus_ai_engineer
+domain: amadeus_api
+seed_examples:
+  - question: What is the Amadeus Developer API?
+    answer: |
+      The Amadeus Developer API is a suite of RESTful APIs that provide access to a wide range of travel data and functionalities, enabling developers to build innovative travel applications. The APIs cover areas such as flights, hotels, destination experiences, cars and transfers, market insights, and itinerary management. 
+  - question: What are the main categories of the Amadeus Self-Service APIs?
+    answer: |
+      The Amadeus Self-Service APIs are categorized into six main areas:
+      - **Flight APIs**: For flight search, booking, and airport information.
+      - **Hotel APIs**: For hotel search, booking, and ratings.
+      - **Destination Experiences APIs**: For tours, activities, tourist attractions, and safety data.
+      - **Cars and Transfers APIs**: For transfer search, booking, and management.
+      - **Market Insights APIs**: For data on popular destinations and location scores.
+      - **Itinerary Management APIs**: For trip-planning functionalities.
+  - question: How can developers get started with the Amadeus APIs?
+    answer: |
+      Developers can get started by registering for a free account on the Amadeus for Developers portal. This provides access to comprehensive travel data sets, tools, and API keys for immediate use of the free test data collection, allowing developers to build and test travel applications promptly. 
+  - question: What is the purpose of the Amadeus for Developers Postman collection?
+    answer: |
+      The Amadeus for Developers Postman collection allows developers to interact with the Amadeus Self-Service APIs without writing code. It provides a categorized list of APIs, facilitating learning and testing of various functionalities such as flight search, hotel search, and more. 
+  - question: What is the difference between Amadeus Self-Service APIs and Enterprise APIs?
+    answer: |
+      - **Self-Service APIs**: Designed for independent developers and startups, offering quick access to selected APIs with a pay-as-you-go pricing model. They provide detailed documentation, guides, and SDKs for easy integration.
+      - **Enterprise APIs**: Tailored for companies with large-scale needs, providing access to the full Amadeus API catalog. Customers receive dedicated support and customized pricing schemes. Access is granted on a request basis, and specific requirements may apply.
+  - question: How does Amadeus ensure the security of its APIs?
+    answer: |
+      Amadeus employs OAuth 2.0 for secure API authentication, requiring developers to obtain access tokens using their API key and secret. This ensures that only authorized applications can access the APIs. 
+  - question: What support resources are available for developers using Amadeus APIs?
+    answer: |
+      Developers have access to a range of support resources, including:
+      - Detailed documentation and developer guides.
+      - Code examples and SDKs in multiple programming languages.
+      - A Postman collection for API testing.
+      - A GitHub workspace with samples and prototypes.
+      - Community support through platforms like Discord.
+      - A developer blog and YouTube channel for tutorials and updates.
+  - question: How can I perform a flight search using the Amadeus API in Python?
+    answer: |
+      To perform a flight search using the Amadeus API in Python, you can utilize the Amadeus Python SDK. Here's an example:
+
+      ```python
+      import amadeus
+
+      amadeus = amadeus.Client(
+          client_id='YOUR_API_KEY',
+          client_secret='YOUR_API_SECRET'
+      )
+
+      response = amadeus.shopping.flight_offers_search.get(
+          originLocationCode='NYC',
+          destinationLocationCode='LON',
+          departureDate='2025-06-01',
+          adults=1
+      )
+
+      print(response.data)
+      ```
+
+      Replace `'YOUR_API_KEY'` and `'YOUR_API_SECRET'` with your actual Amadeus API credentials. This script searches for flights from New York City (NYC) to London (LON) departing on June 1, 2025, for one adult.
+  - question: What is the Amadeus for Developers GitHub workspace?
+    answer: |
+      The Amadeus for Developers GitHub workspace is a repository where developers can find code examples, prototypes, and the latest versions of SDKs in various programming languages. It serves as a collaborative space for exploring code and contributing to travel tech projects.
+  - question: How can developers manage their applications and API credentials with Amadeus?
+    answer: |
+      Developers can manage their applications and API credentials through the Amadeus for Developers portal. The portal allows developers to create and manage applications, obtain API keys, monitor usage, and access support resources.
+document:
+  repo: https://github.com/cedricclyburn/amadeus_knowledge
+  commit: 9f542e90f2d49c03ecfb6dc850a6a16e03e89471
+  patterns:
+    - developer-api.md
